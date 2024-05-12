@@ -3,6 +3,6 @@
   .apexcharts-series
   .apexcharts-candlestick-area {
   width: 80%;
-  rx: 5px; /* Adjust the horizontal border radius */
-  ry: 5px; /* Adjust the vertical border radius */
+  rx: 5px;
+  ry: 5px;
 }

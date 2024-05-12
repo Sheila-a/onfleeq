@@ -2,16 +2,10 @@ import Header from '../../components/Header';
 import Icons from '../../components/Icon';
 import TopCard from '../../components/TopCard';
 import './style.css';
-import {
-  // StatisticsChart,
-  ApexChart,
-} from '../../components/statistics-chart';
+import { ApexChart } from '../../components/statistics-chart';
 import SideNav from '../../layouts/SideNav/SideNav';
 import './Dashboard.css';
 import Lottie from 'react-lottie';
-// import animationData from '../../assets/Spinner.json';
-// import animationData from '../../assets/turner.json';
-// import animationData from '../../assets/deal.json';
 import { deal, card } from '../../assets';
 import Transaction from '../../components/transaction';
 import ConnectCard from '../../components/connect-card';
@@ -142,7 +136,6 @@ const Dashboard = () => {
                       data-aos-duration='1000'
                       className=' my-5 mb-16 p-3 rounded-xl bg-ongrey2'
                     >
-                      {/* <StatisticsChart /> */}
                       <ApexChart />
                     </div>
                   </div>
@@ -227,22 +220,13 @@ const Dashboard = () => {
                     data-aos='fade-up'
                     data-aos-duration='1000'
                   >
-                    {/* <StatisticsChart /> */}
                     <ApexChart />
                   </div>
                   <div className='flex gap-5 flex-col md:flex-row justify-between'>
-                    <div
-                      className='md:w-1/2 w-full'
-                      // data-aos='zoom-in'
-                      // data-aos-duration='1000'
-                    >
+                    <div className='md:w-1/2 w-full'>
                       <SpenTimeCard />
                     </div>
-                    <div
-                      className='md:w-1/2 w-full'
-                      // data-aos='zoom-in'
-                      // data-aos-duration='1000'
-                    >
+                    <div className='md:w-1/2 w-full'>
                       <ConnectCard />
                     </div>
                   </div>
