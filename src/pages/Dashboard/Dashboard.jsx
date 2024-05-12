@@ -1,6 +1,6 @@
 import Header from '../../components/Header';
 import Icons from '../../components/Icon';
-import TopCard from '../../components/TopCard2';
+import TopCard from '../../components/TopCard';
 import './style.css';
 import {
   // StatisticsChart,
@@ -65,7 +65,11 @@ const Dashboard = () => {
           >
             {' '}
             {isMobileOn && (
-              <div className='fixed left-0 bottom-0 w-full z-50'>
+              <div
+                className='fixed left-0 bottom-0 w-full z-50'
+                data-aos='fade-up'
+                data-aos-duration='1000'
+              >
                 <div className='absolute bottom-0  w-full p-4 py-7 rounded-[50px] bg-[#3326ae]'>
                   <div className='flex relative justify-evenly'>
                     <Icons
@@ -96,7 +100,11 @@ const Dashboard = () => {
             <div className='p-5 md:p-0'>
               <Header />
               <div className='block md:hidden   '>
-                <div className=' flex justify-center items-center'>
+                <div
+                  className=' flex justify-center items-center'
+                  data-aos='fade-up'
+                  data-aos-duration='1000'
+                >
                   <div className='rounded-lg w-[200px] h-[50px] shadow-2xl'>
                     <div className='toggle '>
                       <Icons
@@ -132,8 +140,12 @@ const Dashboard = () => {
                 {!isLeftSelected && (
                   <div className='mt-14'>
                     {' '}
-                    <TopCard />
-                    <div className=' my-5 mb-16 p-3 rounded-xl bg-ongrey2'>
+                    <TopCard2 />
+                    <div
+                      data-aos='fade-up'
+                      data-aos-duration='1000'
+                      className=' my-5 mb-16 p-3 rounded-xl bg-ongrey2'
+                    >
                       {/* <StatisticsChart /> */}
                       <ApexChart />
                     </div>
@@ -142,10 +154,18 @@ const Dashboard = () => {
                 {isLeftSelected && (
                   <div className='mt-10 relative'>
                     {' '}
-                    <div className='absolute -right-7 z-[200px] top-14 shadow-lg p-2 px-4 rounded-lg bg-[#3326ae] text-white'>
+                    <div
+                      className='absolute -right-7 z-[200px] top-14 shadow-lg p-2 px-4 rounded-lg bg-[#3326ae] text-white'
+                      data-aos='zoom-in'
+                      data-aos-duration='1000'
+                    >
                       $10,600
                     </div>
-                    <div className='flex mt-6 flex-col   items-center justify-center'>
+                    <div
+                      className='flex mt-6 flex-col   items-center justify-center'
+                      data-aos='zoom-in'
+                      data-aos-duration='1000'
+                    >
                       <h3 className='text-slate-500 mb-8 font-semibold'>
                         Total Sales
                       </h3>
@@ -174,7 +194,11 @@ const Dashboard = () => {
                         </div>
                       </div>
                     </div>{' '}
-                    <div className='mt-9 '>
+                    <div
+                      className='mt-9 '
+                      data-aos='fade-up'
+                      data-aos-duration='1000'
+                    >
                       <div className='flex justify-between items-center'>
                         <h6 className='font-semibold text-slate-500'>
                           My card
@@ -191,7 +215,7 @@ const Dashboard = () => {
               <div className='md:grid hidden gap-7 lg:grid-cols-12'>
                 <div className=' lg:col-span-8'>
                   <div className=''>
-                    <TopCard2 />
+                    <TopCard />
                   </div>{' '}
                   <div className='fixed'>
                     <div className='absolute'>

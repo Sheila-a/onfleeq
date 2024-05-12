@@ -3,7 +3,12 @@ const TopCard2 = () => {
   return (
     <div className='grid gap-2 md:gap-5 grid-cols-3'>
       {topcarddata.map((item) => (
-        <div key={item.id} className='bg-ongrey2 p-3 px-1 pt-1  rounded-3xl'>
+        <div
+          key={item.id}
+          className='bg-ongrey2 p-3 px-1 pt-1  rounded-3xl'
+          data-aos='zoom-in'
+          data-aos-duration='1000'
+        >
           <div
             className={`rounded-lg p-2 md:p-5 `}
             style={{ background: item.bg }}
