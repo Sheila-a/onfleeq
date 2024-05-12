@@ -52,7 +52,7 @@ const Dashboard = () => {
     <div className='bg-white rounded-tl-3xl rounded-br-xl  rounded-tr-xl rounded-bl-3xl  0'>
       <div className='lg:max-h-[90vh]  w-full  overflow-auto'>
         <div className='flex'>
-          <div className='md:w-[5%] md:block hidden'>
+          <div className='xl:w-[5%] md:w-[8%] md:block hidden'>
             <SideNav />
           </div>
           <div
