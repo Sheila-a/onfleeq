@@ -65,11 +65,7 @@ const Dashboard = () => {
           >
             {' '}
             {isMobileOn && (
-              <div
-                className='fixed left-0 bottom-0 w-full z-50'
-                data-aos='fade-up'
-                data-aos-duration='1000'
-              >
+              <div className='fixed left-0 bottom-0 w-full z-50'>
                 <div className='absolute bottom-0  w-full p-4 py-7 rounded-[50px] bg-[#3326ae]'>
                   <div className='flex relative justify-evenly'>
                     <Icons
@@ -226,27 +222,51 @@ const Dashboard = () => {
                       />
                     </div>
                   </div>
-                  <div className=' my-5 p-3 rounded-xl bg-ongrey2'>
+                  <div
+                    className=' my-5 p-3 rounded-xl bg-ongrey2'
+                    data-aos='fade-up'
+                    data-aos-duration='1000'
+                  >
                     {/* <StatisticsChart /> */}
                     <ApexChart />
                   </div>
                   <div className='flex gap-5 flex-col md:flex-row justify-between'>
-                    <div className='md:w-1/2 w-full'>
+                    <div
+                      className='md:w-1/2 w-full'
+                      // data-aos='zoom-in'
+                      // data-aos-duration='1000'
+                    >
                       <SpenTimeCard />
                     </div>
-                    <div className='md:w-1/2 w-full'>
+                    <div
+                      className='md:w-1/2 w-full'
+                      // data-aos='zoom-in'
+                      // data-aos-duration='1000'
+                    >
                       <ConnectCard />
                     </div>
                   </div>
                 </div>
                 <div className='relative lg:col-span-4 p-6 bg-ongrey2 rounded-xl'>
-                  <div className='flex justify-end text-boldgrey'>
+                  <div
+                    className='flex justify-end text-boldgrey'
+                    data-aos='zoom-in'
+                    data-aos-duration='1000'
+                  >
                     <Icons icon='iconamoon:edit-light' />
                   </div>
-                  <div className='absolute -right-7 top-14 shadow-lg p-2 px-4 rounded-lg bg-[#3326ae] text-white'>
+                  <div
+                    className='absolute -right-7 top-14 shadow-lg p-2 px-4 rounded-lg bg-[#3326ae] text-white'
+                    data-aos='zoom-in'
+                    data-aos-duration='1000'
+                  >
                     $10,600
                   </div>
-                  <div className='flex mt-6 items-center justify-center'>
+                  <div
+                    className='flex mt-6 items-center justify-center'
+                    data-aos='zoom-in'
+                    data-aos-duration='1000'
+                  >
                     <div className='bg-white rounded-full w-36 h-36 relative'>
                       <div className='flex items-center justify-center h-36'>
                         <div className='bg-white rounded-full w-24 shadow-md h-24'>
@@ -272,13 +292,22 @@ const Dashboard = () => {
                     </div>
                   </div>
                   <div className='mt-9 '>
-                    <div className='flex justify-between items-center'>
+                    <div
+                      className='flex justify-between items-center'
+                      data-aos='zoom-in'
+                      data-aos-duration='1000'
+                    >
                       <h6 className='font-semibold text-slate-700'>My card</h6>
                       <span className='t tracking-widest font-semibold text-slate-400'>
                         ..
                       </span>
                     </div>
-                    <img src={card} className='mt-5 w-full mb-2' />
+                    <img
+                      src={card}
+                      className='mt-5 w-full mb-2'
+                      data-aos='zoom-in'
+                      data-aos-duration='1000'
+                    />
                     <Transaction />
                   </div>
                 </div>
