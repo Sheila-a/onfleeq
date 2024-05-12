@@ -2,7 +2,7 @@ import Header from '../../components/Header';
 import Icons from '../../components/Icon';
 import TopCard from '../../components/TopCard2';
 import './style.css';
-import StatisticsChart, {
+import {
   // StatisticsChart,
   ApexChart,
 } from '../../components/statistics-chart';
@@ -12,21 +12,41 @@ import Lottie from 'react-lottie';
 // import animationData from '../../assets/Spinner.json';
 // import animationData from '../../assets/turner.json';
 // import animationData from '../../assets/deal.json';
-import { deal, card, spinner, turner } from '../../assets';
+import { deal, card } from '../../assets';
 import Transaction from '../../components/transaction';
 import ConnectCard from '../../components/connect-card';
 import SpenTimeCard from '../../components/spent-time-card';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import TopCard2 from '../../components/TopCard2';
 
 const Dashboard = () => {
   const [isLeftSelected, setIsLeftSelected] = useState(false);
   const [isMobileOn, setisMobileOn] = useState(false);
+  const [isDesktopOn, setisDesktopOn] = useState(true);
 
   const toggleSwitch = () => {
-    setisMobileOn(true);
     setIsLeftSelected(!isLeftSelected);
   };
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 767) {
+        setisMobileOn(true);
+        setisDesktopOn(false);
+      } else {
+        setisMobileOn(false);
+        setisDesktopOn(true);
+      }
+    };
+
+    handleResize();
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   return (
     <div className='bg-white rounded-tl-3xl rounded-br-xl  rounded-tr-xl rounded-bl-3xl  0'>
@@ -36,21 +56,21 @@ const Dashboard = () => {
             <SideNav />
           </div>
           <div
-            className={`w-[100%] relative  md:p-10 md:pr-14 ${
+            className={`w-[100%] md:relative  md:p-10 md:pr-14 ${
               !isLeftSelected ? 'bg-white ' : 'bg-[#f6f8fe]'
             } rounded-3xl z-10  ${
               isMobileOn == true &&
               'r rounded-bl-[100px] rounded-br-[80px] min-h-[100vh]'
-            }`}
+            } ${isDesktopOn && 'bg-white'}`}
           >
             {' '}
             {isMobileOn && (
-              <div className='fixed left-0 bottom-0 w-full'>
+              <div className='fixed left-0 bottom-0 w-full z-50'>
                 <div className='absolute bottom-0  w-full p-4 py-7 rounded-[50px] bg-[#3326ae]'>
                   <div className='flex relative justify-evenly'>
                     <Icons
                       icon='mingcute:home-3-fill'
-                      width={35}
+                      width={45}
                       className='text-[#fe382b]   shadow-shede bg-white p-2 rounded-lg z-[999px] absolute left-5 -top-12  hover:text-white hover:bg-[#fe382b]  cursor-pointer'
                     />{' '}
                     <Icons
@@ -117,19 +137,56 @@ const Dashboard = () => {
                       {/* <StatisticsChart /> */}
                       <ApexChart />
                     </div>
-                    <TopCard />
-                    <div className=' my-5 mb-16 p-3 rounded-xl bg-ongrey2'>
-                      {/* <StatisticsChart /> */}
-                      <ApexChart />
+                  </div>
+                )}
+                {isLeftSelected && (
+                  <div className='mt-10 relative'>
+                    {' '}
+                    <div className='absolute -right-7 z-[200px] top-14 shadow-lg p-2 px-4 rounded-lg bg-[#3326ae] text-white'>
+                      $10,600
                     </div>
-                    <TopCard />
-                    <div className=' my-5 mb-16 p-3 rounded-xl bg-ongrey2'>
-                      {/* <StatisticsChart /> */}
-                      <ApexChart />
+                    <div className='flex mt-6 flex-col   items-center justify-center'>
+                      <h3 className='text-slate-500 mb-8 font-semibold'>
+                        Total Sales
+                      </h3>
+
+                      <div className='bg-white rounded-full w-36 h-36 relative'>
+                        <div className='flex items-center justify-center h-36'>
+                          <div className='bg-white rounded-full w-24 shadow-md h-24'>
+                            <div className='h-24 flex items-center justify-center'>
+                              <p className='text-onblue font-bold text-2xl'>
+                                38<span className='text-sm font-normal'>%</span>
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div className='h-36 w-36 absolute top-0'>
+                          {' '}
+                          <Lottie
+                            options={{
+                              animationData: deal,
+                              loop: false,
+                              autoplay: true,
+                            }}
+                            height={150}
+                            width={150}
+                          />
+                        </div>
+                      </div>
+                    </div>{' '}
+                    <div className='mt-9 '>
+                      <div className='flex justify-between items-center'>
+                        <h6 className='font-semibold text-slate-500'>
+                          My card
+                        </h6>
+                        <span className=' tracking-widest font-semibold text-slate-400'>
+                          ..
+                        </span>
+                      </div>
+                      <img src={card} className='mt-5 w-full mb-2 z-0' />
                     </div>
                   </div>
                 )}
-                {isLeftSelected && 'hhh'}
               </div>
               <div className='md:grid hidden gap-7 lg:grid-cols-12'>
                 <div className=' lg:col-span-8'>
@@ -137,11 +194,13 @@ const Dashboard = () => {
                     <TopCard2 />
                   </div>{' '}
                   <div className='fixed'>
-                    <Icons
-                      icon='mingcute:home-3-fill'
-                      width={35}
-                      className='text-[#fe382b] shadow-lg bg-white p-2 rounded-lg z-[999px] md:absolute hidden -left-[58px]  hover:text-white hover:bg-[#fe382b]  cursor-pointer'
-                    />
+                    <div className='absolute'>
+                      <Icons
+                        icon='mingcute:home-3-fill'
+                        width={35}
+                        className='text-[#fe382b] shadow-lg bg-white p-2 rounded-lg z-[999px] md:absolute  md:block hidden  -left-[58px]  hover:text-white -top-16 hover:bg-[#fe382b]  cursor-pointer'
+                      />
+                    </div>
                   </div>
                   <div className=' my-5 p-3 rounded-xl bg-ongrey2'>
                     {/* <StatisticsChart /> */}

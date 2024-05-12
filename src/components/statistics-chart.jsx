@@ -199,13 +199,13 @@ export const ApexChart = () => {
     {
       data: [
         { x: 'November', y: [800, 0, 500, 2000] },
-        { x: 'December', y: [2000, 2500, 1800, 2200] },
-        { x: 'January', y: [2000, 2500, 1800, 2200] },
-        { x: 'February', y: [2000, 2500, 1800, 2200] },
-        { x: 'March', y: [2000, 2500, 1800, 2200] },
-        { x: 'April', y: [2000, 2500, 1800, 2200] },
-        { x: 'May', y: [2000, 2500, 1800, 2200] },
-        { x: 'June', y: [2000, 2500, 1800, 2200] },
+        { x: 'December', y: [1300, 500, 1800, 2500] },
+        { x: 'January', y: [2000, 2000, 1000, 3700] },
+        { x: 'February', y: [800, 0, 800, 2200] },
+        { x: 'March', y: [1000, 200, 700, 2200] },
+        { x: 'April', y: [1800, 1000, 2300, 3000] },
+        { x: 'May', y: [2500, 2500, 1500, 4200] },
+        { x: 'June', y: [500, 0, 0, 1500] },
       ],
     },
   ];
@@ -242,6 +242,7 @@ export const ApexChart = () => {
         },
         wick: {
           useFillColor: true,
+          width: 10, // Adjust the width of the candlestick
         },
       },
     },
