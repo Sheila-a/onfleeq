@@ -45,29 +45,31 @@ const Dashboard = () => {
           >
             {' '}
             {isMobileOn && (
-              <div className='absolute bottom-0  w-full p-4 rounded-[50px] bg-[#3326ae]'>
-                <div className='flex relative justify-evenly'>
-                  <Icons
-                    icon='mingcute:home-3-fill'
-                    width={35}
-                    className='text-[#fe382b]   shadow-shede bg-white p-2 rounded-lg z-[999px] absolute left-5 -top-8  hover:text-white hover:bg-[#fe382b]  cursor-pointer'
-                  />{' '}
-                  <Icons
-                    icon='heroicons:chart-pie-20-solid'
-                    width={25}
-                    className='text-ongrey ml-14 hover:text-white cursor-pointer'
-                  />
-                  <Icons
-                    icon='ri:chat-smile-fill'
-                    hFlip='horizontal'
-                    width={25}
-                    className='text-ongrey hover:text-white cursor-pointer'
-                  />
-                  <Icons
-                    icon='ion:wallet'
-                    width={25}
-                    className='text-ongrey hover:text-white cursor-pointer'
-                  />
+              <div className='fixed left-0 bottom-0 w-full'>
+                <div className='absolute bottom-0  w-full p-4 py-7 rounded-[50px] bg-[#3326ae]'>
+                  <div className='flex relative justify-evenly'>
+                    <Icons
+                      icon='mingcute:home-3-fill'
+                      width={35}
+                      className='text-[#fe382b]   shadow-shede bg-white p-2 rounded-lg z-[999px] absolute left-5 -top-12  hover:text-white hover:bg-[#fe382b]  cursor-pointer'
+                    />{' '}
+                    <Icons
+                      icon='heroicons:chart-pie-20-solid'
+                      width={25}
+                      className='text-ongrey ml-14 hover:text-white cursor-pointer'
+                    />
+                    <Icons
+                      icon='ri:chat-smile-fill'
+                      hFlip='horizontal'
+                      width={25}
+                      className='text-ongrey hover:text-white cursor-pointer'
+                    />
+                    <Icons
+                      icon='ion:wallet'
+                      width={25}
+                      className='text-ongrey hover:text-white cursor-pointer'
+                    />
+                  </div>
                 </div>
               </div>
             )}
@@ -111,7 +113,17 @@ const Dashboard = () => {
                   <div className='mt-14'>
                     {' '}
                     <TopCard />
-                    <div className=' my-5 p-3 rounded-xl bg-ongrey2'>
+                    <div className=' my-5 mb-16 p-3 rounded-xl bg-ongrey2'>
+                      {/* <StatisticsChart /> */}
+                      <ApexChart />
+                    </div>
+                    <TopCard />
+                    <div className=' my-5 mb-16 p-3 rounded-xl bg-ongrey2'>
+                      {/* <StatisticsChart /> */}
+                      <ApexChart />
+                    </div>
+                    <TopCard />
+                    <div className=' my-5 mb-16 p-3 rounded-xl bg-ongrey2'>
                       {/* <StatisticsChart /> */}
                       <ApexChart />
                     </div>
